@@ -5,6 +5,10 @@ This folder contains an implementation of the expression search algorithm (Algor
 [Optimal First-Order Boolean Masking for Embedded IoT Devices](https://link.springer.com/chapter/10.1007/978-3-319-75208-2_2) \
 by Alex Biryukov, Daniel Dinu, Yann Le Corre and Aleksei Udovenko (CARDIS 2017)
 
+The algorithm performs a breadth-first search of expressions (Boolean formulas) of 2 *shares* that xor-sum to a given function of shared inputs. For example, assume that we want to find an optimal AND gadget. The two input bits are shared in two shares each: **(a, b)** and **(c, d)**. We want to compute two xor-shares of the value **(a xor b) and (c xor d)** such that any single intermediate or final value does not leak information about **(a xor b)** and **(c xor d)**. 
+
+Note that such expressions provide only a heuristic protection against first-order power analysis attack, as there no random bits are used. 
+
 The code is written in Python 2. For optimal performance, it is suggested to run it using PyPy. The script should be called as follows:
 
 ```bash
