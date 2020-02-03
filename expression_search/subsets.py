@@ -2,10 +2,12 @@
 #-*- coding:utf-8 -*-
 """
 Usage:
-$ pypy subsets.py [OP] <BASIC|ARM> [MAX_COST]
+$ pypy subsets.py [OP] [ARCH] [MAX_COST]
 - OP can be one of XOR, AND, ANDNOT, NOTAND, OR, ORNOT, NOTOR, ANDOR
-- BASIC is the gate set (XOR, AND, NOT); ARM in addition adds BIC and ORN
-- MAX COST is maximum number of gates to consider
+- ARCH defines the gate set:
+    - BASIC stands for (XOR, AND, NOT);
+    - ARM in addition adds BIC (BitClear) and ORN (OrNot) gates;
+- MAX COST is the maximum number of gates to consider
 
 Example:
 $ pypy subsets.py OR BASIC 6
